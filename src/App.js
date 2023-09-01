@@ -1,9 +1,10 @@
 import React from 'react'
 import { Navbar } from './components/Navbar'
-
+import { ByContinents } from './components/ByContinents';
 import { Feed } from './components/Feed';
 import { Routes,Route } from 'react-router-dom';
 import { CountryData } from './components/CountryData';
+import { SearchedCountry } from './components/SearchedCountry';
 
 
 const App = () => {
@@ -16,6 +17,8 @@ const App = () => {
       <Routes>
         <Route path='/'  element={<Feed isDark={isDark}/>} />
         <Route path='/country/:name'  element={<CountryData/>} />
+        <Route path='/search/:searchedterm'  element={<SearchedCountry/>} />
+        <Route path='/:continent' element={<ByContinents/>}  />
       </Routes>
     </div>
   )

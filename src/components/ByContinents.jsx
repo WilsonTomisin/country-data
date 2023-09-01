@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { SearchField } from './searchField'
 
 
-export const Feed = ({isDark}) => {
+export const ByContinents = ({isDark}) => {
     const [data, setdata] = React.useState(datasets.filter(item => item.independent == true && item.population > 100000000))
     
 
@@ -18,7 +18,7 @@ export const Feed = ({isDark}) => {
                 return(
                     index < 8 
                     && 
-                    <div  key={index} className={` ${darktheme} duration-700 transition-all h-auto w-auto rounded-lg  shadow-slate-500 hover:shadow-xl hover:scale-110 `}>
+                    <div  key={index} className={` ${darktheme} duration-700 transition-colors h-auto w-auto rounded-lg  shadow-slate-500 hover:shadow-xl `}>
                         <Link to={`/country/${item.name}`}>
                             <img src={item.flags.png} alt={item.name + 'flag'} className=' h-1/2 w-full rounded-t-lg' />
                             <div className=' px-8 py-5 '>

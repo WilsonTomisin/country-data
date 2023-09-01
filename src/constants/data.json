@@ -7230,7 +7230,7 @@
     "independent": true
   },
   {
-    "name": "Iran (Islamic Republic of)",
+    "name": "Iran",
     "topLevelDomain": [".ir"],
     "alpha2Code": "IR",
     "alpha3Code": "IRN",
@@ -8230,7 +8230,7 @@
     "independent": true
   },
   {
-    "name": "Lao People's Democratic Republic",
+    "name": "Laos",
     "topLevelDomain": [".la"],
     "alpha2Code": "LA",
     "alpha3Code": "LAO",
@@ -11076,7 +11076,7 @@
     "independent": false
   },
   {
-    "name": "Korea (Democratic People's Republic of)",
+    "name": "North Korea",
     "topLevelDomain": [".kp"],
     "alpha2Code": "KP",
     "alpha3Code": "PRK",
@@ -12388,7 +12388,7 @@
     "independent": true
   },
   {
-    "name": "Russian Federation",
+    "name": "Russia",
     "topLevelDomain": [".ru"],
     "alpha2Code": "RU",
     "alpha3Code": "RUS",
@@ -14134,7 +14134,7 @@
     "independent": false
   },
   {
-    "name": "Korea (Republic of)",
+    "name": "South Korea",
     "topLevelDomain": [".kr"],
     "alpha2Code": "KR",
     "alpha3Code": "KOR",
@@ -15028,7 +15028,7 @@
     "independent": true
   },
   {
-    "name": "Tanzania, United Republic of",
+    "name": "Tanzania",
     "topLevelDomain": [".tz"],
     "alpha2Code": "TZ",
     "alpha3Code": "TZA",

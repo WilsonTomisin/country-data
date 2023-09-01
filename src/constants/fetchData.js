@@ -1,7 +1,7 @@
-import data from './data.json'
+import data from './data.json/'
 
 const fetchData = async(param)=>{
-    
+
 
 
 }

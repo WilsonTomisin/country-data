@@ -1,16 +1,15 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import datasets from '../constants/data.json';
-import { BsArrowLeft} from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom';
+import { BsArrowLeft} from 'react-icons/bs';
 
-export const CountryData = () => {
-    const {name} = useParams();
-    const navigate = useNavigate()
-    const [countryData, setCountryData] = React.useState( datasets.filter( item => item.name == name))
-
-    const [ { population, nativeName,capital, region,subregion,currencies, languages, borders, topLevelDomain, flags }] = countryData
-    React.useEffect(()=> console.log(countryData),[])
+export const SearchedCountry = () => {
+    const {searchedterm} = useParams();
+    const [searchedCountry, setsearchedCountry] = React.useState(datasets.filter(item=> item.name.toLowerCase() === searchedterm.toLowerCase()))
+    const navigate = useNavigate();
+    const [ { name,population, nativeName,capital, region,subregion,currencies, languages, borders, topLevelDomain, flags }] = searchedCountry
+    // React.useEffect(()=> console.log(countryData),[])
     return (
     <>
         <button onClick={()=> navigate('/')}
@@ -20,7 +19,7 @@ export const CountryData = () => {
         </button>
       <div className=' flex items-center justify-between p-12'>
         <div className='  mt-12 w-1/2 h-auto pr-10'>
-            <img src={flags.png} alt={name+' flag'} className=' w-full'/>
+            <img src={flags.png} alt={name+' flag'} className=' w-full '/>
         </div>
         <div className=' mt-12 w-1/2 h-auto'>
             <h1 className='  text-3xl mb-5 font-bold text-slate-950'>{name}</h1>
@@ -68,6 +67,8 @@ export const CountryData = () => {
         </div>
       </div>
     </>
+    
+    
   )
 }
 

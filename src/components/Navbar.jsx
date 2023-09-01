@@ -13,8 +13,8 @@ export const Navbar = ({setIsDark, isDark}) => {
         e.preventDefault();
         setIsDark(preval=> !preval)
       }}>
-        <BsMoon/>
-        <span className=' ml-2'>Dark mode</span>
+        { isDark? <BsSun/> : <BsMoon/>}
+        <span className=' ml-2'>{isDark?'light mode': 'dark mode'}</span>
       </button>
     </div>
   )
