@@ -1,5 +1,9 @@
 .find-btn{
-    background-color: red;
+    background-color: chartreuse;
+    padding: 7px 25px;
+    font: bold;
+    color: white;
+    border-radius: 10px;
     opacity: 0;
     transition: all 0.7s ease-in-out;
 }
