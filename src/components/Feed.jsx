@@ -19,7 +19,7 @@ export const Feed = ({isDark}) => {
 
     <>
         <SearchField isDark={isDark} setContinent={setContinent} data={data}  />
-        <div className=' p-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+        <div className=' min-w-fit p-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8'>
             { filteredData.length > 0  ? filteredData.map((item,index)=>{
                 return(
                     

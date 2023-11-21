@@ -21,7 +21,7 @@ export const SearchField = ({isDark, setContinent, data}) => {
 
   
   return (
-    <div className=' p-12 flex items-center flex-col md:flex-row justify-between'>
+    <div className=' w-auto p-12 flex items-center flex-col md:flex-row justify-between'>
       <div className=' flex items-center'>
         <BiSearch className={` relative left-9 -top-2  md:top-0 text-2xl ${darktheme}`}/>
         <input type="search" value={searchTerm} onChange={(e)=>setsearchTerm(e.target.value)} placeholder='search for a country...' className={` ${darktheme} search-field py-4 pl-14 pr-40 rounded-lg shadow-slate-600 shadow-md mb-5 md:mb-0`} />

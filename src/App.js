@@ -11,7 +11,7 @@ const App = () => {
   const [isDark, setIsDark] = React.useState(false);
   const darktheme = isDark? 'bg-slate-900': 'bg-slate-100';
   return (
-    <div className={` ${darktheme} h-auto w-auto duration-700 transition-colors`}>
+    <div className={` ${darktheme} h-auto w duration-700 transition-colors`}>
       <Navbar setIsDark={setIsDark} isDark={isDark}/>
       
       <Routes>
