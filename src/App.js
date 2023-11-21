@@ -11,14 +11,14 @@ const App = () => {
   const [isDark, setIsDark] = React.useState(false);
   const darktheme = isDark? 'bg-slate-900': 'bg-slate-100';
   return (
-    <div className={` ${darktheme} h-auto w-full duration-700 transition-colors bg-sla`}>
+    <div className={` ${darktheme} h-auto w-auto duration-700 transition-colors`}>
       <Navbar setIsDark={setIsDark} isDark={isDark}/>
       
       <Routes>
         <Route path='/'  element={<Feed isDark={isDark}/>} />
-        <Route path='/country/:name'  element={<CountryData/>} />
-        <Route path='/search/:searchedterm'  element={<SearchedCountry/>} />
-        <Route path='/:continent' element={<ByContinents/>}  />
+        <Route path='/country/:name'  element={<CountryData isDark={isDark}/>} />
+        <Route path='/search/:searchedterm'  element={<SearchedCountry isDark={isDark}/>} />
+        
       </Routes>
     </div>
   )

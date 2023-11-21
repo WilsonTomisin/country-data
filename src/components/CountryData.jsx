@@ -4,17 +4,19 @@ import { useNavigate } from 'react-router-dom';
 import datasets from '../constants/data.json';
 import { BsArrowLeft} from 'react-icons/bs'
 
-export const CountryData = () => {
+export const CountryData = ({isDark}) => {
     const {name} = useParams();
     const navigate = useNavigate()
     const [countryData, setCountryData] = React.useState( datasets.filter( item => item.name == name))
-
     const [ { population, nativeName,capital, region,subregion,currencies, languages, borders, topLevelDomain, flags }] = countryData
     React.useEffect(()=> console.log(countryData),[])
+
+    const darktheme = isDark ? ' bg-slate-900 text-white' : 'bg-slate-100 text-slate-950'
+    const darktheme2 = isDark ? ' bg-slate-800 text-white' : 'bg-white text-slate-950'
     return (
-    <>
+    <div className={`${darktheme} duration-700 transition-colors`}>
         <button onClick={()=> navigate('/')}
-        className='ml-12 mt-12 bg-white rounded-lg shadow-md shadow-slate-400 px-6 py-2 font-semibold flex justify-between'>
+        className={` ${darktheme2} ml-12 mt-12 rounded-lg shadow-md shadow-slate-400 px-6 py-2 font-semibold flex justify-between items-center`}>
             <span className=' font-extrabold text-xl'> <BsArrowLeft/> </span>
             Back
         </button>
@@ -23,7 +25,7 @@ export const CountryData = () => {
             <img src={flags.png} alt={name+' flag'} className=' w-full'/>
         </div>
         <div className=' mt-12 w-1/2 h-auto'>
-            <h1 className='  text-3xl mb-5 font-bold text-slate-950'>{name}</h1>
+            <h1 className='  text-3xl mb-5 font-bold '>{name}</h1>
             <div className=' grid grid-rows-5 grid-flow-col gap-4'>
                 <p className=' font-semibold'>
                     Native name: <span className=' text-slate-600 font-medium'> {nativeName}</span>
@@ -48,26 +50,26 @@ export const CountryData = () => {
                 </p>
                 <p className=' font-semibold'>
                     Languages: <span className=' text-slate-600 font-medium'>
-                        {languages.map(item=>(<>{item.name} ,</>))}
+                        {languages.map((item,index)=>(<span key={index}>{item.name} ,</span>))}
                     </span>
                 </p>
             </div>
             <div className=' mt-11'>
                 <span className=' font-semibold'>Border countries:</span>
-                <div className=' grid grid-rows-3 grid-flow-col gap-2'>
+                <div className=' grid  grid-flow-col gap-2'>
                     { borders ? borders.map((item,index)=>(
                         
-                        <span key={index} className=' bg-white mr-2 px-6 shadow-lg shadow-slate-300 py-2 rounded-lg font-semibold '>
+                        <span key={index} className=' mr-2 px-6 shadow-lg shadow-slate-500 py-2 rounded-lg font-semibold '>
                             {item}
                         </span>
                     
-                )) : <span> no border country</span>}
+                )) : <span> no bordering country</span>}
                 </div>
                 
             </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
