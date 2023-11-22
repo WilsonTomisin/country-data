@@ -6,12 +6,12 @@ import { SearchField } from './searchField'
 
 export const Feed = ({isDark}) => {
     const [ continent, setContinent] = useState('')
-    const [data, setdata] = useState(datasets)
+    const [data, setdata] = useState(datasets.filter((item)=> item.population > 100000000))
     const [filteredData, setfilteredData] = useState([])
     
     
     React.useEffect(()=>{
-        setfilteredData(data.filter((item)=> item.region == continent || item.subregion == continent))
+        setfilteredData(datasets.filter((item)=> item.region == continent || item.subregion == continent))
     },[continent])
 
     const darktheme = isDark ? ' bg-slate-800 text-white' : 'bg-white text-slate-950'
@@ -45,7 +45,7 @@ export const Feed = ({isDark}) => {
                 )
             }) : data.map((item,index)=>{
                 return(
-                    index < 8 
+                    index < 12 
                     && 
                     <div  key={index} className={` ${darktheme} duration-700 transition-all h-auto w-auto rounded-lg  shadow-slate-500 hover:shadow-xl hover:scale-110 `}>
                         <Link to={`/country/${item.name}`}>
